@@ -15,6 +15,21 @@ const closure = () => {
 };
 
 console.log(closure()())
+
 const getCounter = closure();
 console.log(getCounter())
-console.log(getCounter())
+
+// currying
+
+const curriedMultiply = (a) => (b) => a * b;
+console.log(curriedMultiply(10)(10));
+
+const curriedMultiplyBy5 = curriedMultiply(5);
+console.log(curriedMultiplyBy5(4));
+
+
+// Partial Application 
+
+const multiply = (a, b, c) => a * b * c;
+const partialMultiply5 = multiply.bind(null, 5);
+console.log(partialMultiply5(5, 5))
